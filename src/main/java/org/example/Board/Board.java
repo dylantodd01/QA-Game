@@ -15,14 +15,18 @@ public class Board {
 
 
     public Board(int rows, int columns) {
-        this.rows = rows;
-        this.columns = columns;
-        this.boardArray = new Sprite[rows][columns];
+        if (rows < 2 || columns< 2){
+            throw new IllegalArgumentException("Size of Rows and Columns should be larger than 2!");
+        } else {
+            this.rows = rows;
+            this.columns = columns;
+            this.boardArray = new Sprite[rows][columns];
 
-        // Initialising available positions
-        for (int i = 0; i < rows; i++){
-            for (int j = 0; j < columns; j++){
-                this.availablePositions.add(new int[]{i,j});
+            // Initialising available positions
+            for (int i = 0; i < rows; i++){
+                for (int j = 0; j < columns; j++){
+                    this.availablePositions.add(new int[]{i,j});
+                }
             }
         }
     }
