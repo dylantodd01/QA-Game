@@ -4,12 +4,21 @@ import java.util.Locale;
 
 public class Player extends Sprite{
 
+    private boolean alive;
     private int score;
     private final int maxColumn = board.getColumns();
     private final int maxRow = board.getRows();
 
     public Player(int[] position) {
         super(position);
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
 
     public int getScore() {
