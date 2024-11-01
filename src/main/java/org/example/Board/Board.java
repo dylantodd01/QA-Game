@@ -4,15 +4,14 @@ import org.example.Sprites.Sprite;
 
 import javax.swing.text.Position;
 import java.awt.*;
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Board {
     private int rows;
     private int columns;
     private Sprite[][] boardArray ;
-    private List<int[]> availablePositions = new ArrayList<int[]>();
+    private ArrayList<int[]> availablePositions = new ArrayList<int[]>();
 
 
     public Board(int rows, int columns) {
@@ -23,7 +22,7 @@ public class Board {
         // Initialising available positions
         for (int i = 0; i < rows; i++){
             for (int j = 0; j < columns; j++){
-                availablePositions.add(new int[]{i,j});
+                this.availablePositions.add(new int[]{i,j});
             }
         }
     }
@@ -56,17 +55,12 @@ public class Board {
     public void addSprite(Sprite sprite, int[] position){
         if (boardArray[position[0]][position[1]] == null){
             boardArray[position[0]][position[1]] = sprite;
-            removeAvailablePosition(availablePositions, position);
+            // Remove co-ordinates from list once occupied by Sprite
+            availablePositions.remove(position);
         }
         else {
             throw new IllegalStateException("Position is already occupied");
         }
     }
-
-    public void removeAvailablePosition(List<int[]> availablePositions, int[] position){
-        availablePositions.remove(position);
-    }
-
-
 
 }
