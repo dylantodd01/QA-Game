@@ -12,4 +12,10 @@ public class BoardTest {
         assertThrows(IllegalArgumentException.class,() -> {new Board(1, 3);});
         assertThrows(IllegalArgumentException.class,() -> {new Board(4, 1);});
     }
+
+    @Test
+    public void testOccupiedSpace(){
+        Board board = new Board(3,3);
+    }
+
 }
