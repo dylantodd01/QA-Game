@@ -12,21 +12,35 @@ public class Engine {
 
     }
 
+//    public void printBoard(Board b, Player p) {
+//        int r = b.getRows(); int c = b.getColumns();
+//        String horizontalLine = " ----".repeat(Math.max(0, r)) + "  \n";
+//
+//        StringBuilder printFriendlyBoard = new StringBuilder();
+//
+//        for (int i = 0; i < r; i++) {
+//            printFriendlyBoard.append(horizontalLine);
+//
+//            StringBuilder rowContent = new StringBuilder();
+//            for (int j = 0; j < c; j++) {
+//                if (i == ((p.getPosition()[0]) & j == (p.getPosition()[1]))
+//            }
+//        }
+//
+//    }
+
     public void printBoard(Board b, Player p) {
         int r = b.getRows(); int c = b.getColumns();
-        String horizontalLine = " ----".repeat(Math.max(0, r)) + "  \n";
-
-        StringBuilder printFriendlyBoard = new StringBuilder();
+        StringBuilder printOut = new StringBuilder();
 
         for (int i = 0; i < r; i++) {
-            printFriendlyBoard.append(horizontalLine);
-
-            StringBuilder rowContent = new StringBuilder();
             for (int j = 0; j < c; j++) {
-                if (i == (p.)
+                if ((i == p.getPosition()[0]) & (j == p.getPosition()[1])) {
+                    printOut.append(" @ ");
+                }
+                if (b.getBoardArray()[i][j]
             }
         }
-
     }
 
 
